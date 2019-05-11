@@ -1,0 +1,34 @@
+I'm new to Python and I am trying to install it on Windows. I am starting to use it because I have to set-up a watch service for a Windows folder, and then update a database when there are changes in that folder. Searching online has led me to "Watchdog".
+I am trying to install csvkit and watchdog, but I have had no success; pip and easy_install are both not doing anything.
+
+l'ajouter au path avc
+C:\>set Path=%Path%;"C:\Users\Utilisateur\AppData\Local\Programs\Python\Python37\Scripts"
+
+pui executer pip (sans >py pip etc...)
+
+Running Python 3.3.0 x86.
+Windows 7 Professional
+Installed pip and distribute using msi.
+When running Python command shell: 
+Input:
+pip install watchdog
+
+Output:
+File "<stdin>", line 1
+    pip install watchdog
+              ^
+SyntaxError: invalid syntax
+Normal command prompt: 
+Input:
+python pip install watchdog  
+
+Output:
+python: can't open file 'pip': [Errno 2] No such file or directory
+
+The solution below, as mentioned by Breakthrough, is correct:
+Input:
+pip install watchdog 
+But I received the error output because I was missing my Scripts folder in the Environmental Variables.
+Output:
+'pip' is not recognized ans an internal or external command, operable program or batch file.
+Adding C:\Python\Scripts solved it.
